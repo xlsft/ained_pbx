@@ -162,16 +162,8 @@ RUN rm -rf /usr/local/src/asterisk
 WORKDIR /etc/asterisk/
 COPY config/* /etc/asterisk/
 
-# Websockets does not work without TLS
-RUN	apt-get install -y openssl
-RUN mkdir /etc/asterisk/crt
-RUN openssl req -new -x509 -days 365 -nodes \
-    -out /etc/asterisk/crt/certificate.pem \ 
-    -keyout /etc/asterisk/crt/private.pem \
-    -subj "/C=GB/ST=England/L=London/O=Head Office/OU=devops/CN=localhost"
-
 HEALTHCHECK --interval=60s --timeout=10s --retries=3 CMD /usr/sbin/asterisk -rx "core show sysinfo"
 
 ENTRYPOINT ["/usr/sbin/asterisk","-f"]
 
-CMD ["-v"]
+CMD ["-vvvvv"]

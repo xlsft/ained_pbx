@@ -5,5 +5,6 @@ services:
       dockerfile: Dockerfile
     ports:
       - 5060:5060/udp # SIP
-      - 8001:8089 # ARI
+      - 8001:8080 # ARI
       - 8003:5038 # AMI
+      - 10000-10100:10000-10100/udp
