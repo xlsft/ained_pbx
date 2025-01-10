@@ -19,8 +19,6 @@ RUN contrib/scripts/install_prereq install
 RUN ./configure
 RUN make menuselect.makeopts
 RUN menuselect/menuselect \
-    --disable BUILD_NATIVE \
-    --disable-all \
     --enable chan_bridge_media \
     --enable chan_rtp \
     --enable chan_pjsip \
