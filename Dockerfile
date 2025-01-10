@@ -155,10 +155,12 @@ RUN make clean
 RUN chmod -R 750 /var/spool/asterisk
 RUN rm -rf /var/lib/apt/lists/*
 RUN rm -rf /usr/local/src/asterisk
+RUN cd /var/lib/asterisk/ && rm -rf moh && mkdir moh
 
 # Make own samples
 WORKDIR /etc/asterisk/
 COPY config/* /etc/asterisk/
+COPY moh/* /var/lib/asterisk/moh
 
 HEALTHCHECK --interval=60s --timeout=10s --retries=3 CMD /usr/sbin/asterisk -rx "core show sysinfo"
 
