@@ -160,7 +160,7 @@ RUN rm -rf /usr/local/src/asterisk
 
 # Make own samples
 WORKDIR /etc/asterisk/
-COPY Docker/config/* /etc/asterisk/
+COPY config/* /etc/asterisk/
 
 # Websockets does not work without TLS
 RUN	apt-get install -y openssl
