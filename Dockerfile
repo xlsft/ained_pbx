@@ -170,8 +170,6 @@ RUN openssl req -new -x509 -days 365 -nodes \
     -keyout /etc/asterisk/crt/private.pem \
     -subj "/C=GB/ST=England/L=London/O=Head Office/OU=devops/CN=localhost"
 
-EXPOSE 5060/udp
-
 HEALTHCHECK --interval=60s --timeout=10s --retries=3 CMD /usr/sbin/asterisk -rx "core show sysinfo"
 
 ENTRYPOINT ["/usr/sbin/asterisk","-f"]

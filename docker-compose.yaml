@@ -1,0 +1,9 @@
+services:
+  pmx:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 5060:5060/udp # SIP
+      - 8126:8089 # ARI
+      - 8127:5038 # AMI
