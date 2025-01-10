@@ -1,5 +1,5 @@
 services:
-  pmx:
+  pbx:
     build:
       context: .
       dockerfile: Dockerfile
