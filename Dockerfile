@@ -2,7 +2,7 @@
 FROM debian:bookworm
 
 # This is the release version from Asterisk, to change the version, refer to Asterisk GitHub site, and set accordingly.
-ENV ASTERISK_VERSION=releases/22
+ENV ASTERISK_VERSION=releases/20
 
 # ========================================
 
