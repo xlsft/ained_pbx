@@ -9,7 +9,7 @@ ENV ASTERISK_VERSION=releases/20
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update
-RUN apt-get install -y git iputils-ping traceroute
+RUN apt-get install -y git iputils-ping traceroute mpg123
 WORKDIR /usr/local/src
 # Download src
 RUN git clone --branch ${ASTERISK_VERSION} --single-branch --depth 1 https://github.com/asterisk/asterisk.git
